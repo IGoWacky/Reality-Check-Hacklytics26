@@ -1,0 +1,12 @@
+{
+  "manifest_version": 3,
+  "name": "Reality Check",
+  "version": "1.0",
+  "permissions": ["scripting", "activeTab", "storage"],
+  "description": "Base Level Extension",
+
+  "action":{
+    "default_popup": "hello.html",
+    "default_icon": "logo_icon.png"
+  }
+}
