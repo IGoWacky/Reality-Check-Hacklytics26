@@ -11,19 +11,29 @@
 
 * {
   box-sizing: border-box;
+  min-width: 0;
+}
+
+html {
+  width: 390px;
+  min-width: 390px;
+  max-width: 390px;
+  overflow-x: hidden;
 }
 
 body {
   margin: 0;
-  min-width: 360px;
-  max-width: 420px;
-  overflow-x: scroll;
+  width: 390px;
+  min-width: 390px;
+  max-width: 390px;
+  overflow-x: hidden;
   font-family: "Avenir Next", "Segoe UI", sans-serif;
   color: var(--text);
   background: var(--bg);
 }
 
 .popup {
+  width: 100%;
   padding: 14px;
   display: grid;
   gap: 12px;
@@ -42,6 +52,7 @@ body {
   align-items: center;
   gap: 10px;
   min-width: 0;
+  flex: 1 1 auto;
 }
 
 .logo {
@@ -138,12 +149,20 @@ h2 {
   gap: 8px;
 }
 
+.actions > * {
+  min-width: 0;
+}
+
 .btn {
+  width: 100%;
   border: 0;
   border-radius: 10px;
   min-height: 38px;
   cursor: pointer;
   font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .btn-primary {
@@ -175,6 +194,7 @@ h2 {
   padding: 4px 8px;
   border-radius: 999px;
   border: 1px solid var(--border);
+  flex: 0 0 auto;
 }
 
 .chip-idle {
@@ -189,6 +209,12 @@ h2 {
 .chip-ready {
   background: rgba(66, 211, 166, 0.2);
   border-color: rgba(66, 211, 166, 0.5);
+}
+
+@media (max-width: 370px) {
+  .actions {
+    grid-template-columns: 1fr;
+  }
 }
 
 .settings summary {
