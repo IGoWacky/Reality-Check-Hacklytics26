@@ -1,12 +1,18 @@
 {
   "manifest_version": 3,
   "name": "Reality Check",
-  "version": "1.0",
-  "permissions": ["scripting", "activeTab", "storage"],
-  "description": "Base Level Extension",
-
-  "action":{
-    "default_popup": "hello.html",
+  "version": "1.1.0",
+  "description": "Detect whether a video is likely AI-generated or Real.",
+  "permissions": ["activeTab", "tabs", "storage"],
+  "host_permissions": ["<all_urls>"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Reality Check",
     "default_icon": "logo_icon.png"
+  },
+  "icons": {
+    "16": "logo_icon.png",
+    "48": "logo_icon.png",
+    "128": "logo_icon.png"
   }
 }

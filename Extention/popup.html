@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reality Check</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main class="popup">
+      <header class="top">
+        <div class="brand">
+          <img src="logo_icon.png" alt="Reality Check" class="logo" />
+          <div>
+            <p class="eyebrow">Hacklytics 2026</p>
+            <h1>Reality Check</h1>
+          </div>
+        </div>
+        <span id="statusChip" class="chip chip-idle">Idle</span>
+      </header>
+
+      <section class="card verdict-card">
+        <p class="label">Latest Verdict</p>
+        <h2 id="verdictText">No analysis yet</h2>
+        <p id="verdictSubtext" class="muted">
+          Open a page with a video and run an analysis.
+        </p>
+        <div class="meter-wrap">
+          <div class="meter-header">
+            <span>Confidence</span>
+            <strong id="confidenceLabel">--%</strong>
+          </div>
+          <div class="meter-track" aria-hidden="true">
+            <div id="confidenceBar" class="meter-fill"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="card context-card">
+        <p class="label">Current Page</p>
+        <p id="tabTitle" class="line-clamp">Detecting tab info...</p>
+        <p id="tabUrl" class="muted tab-url">--</p>
+      </section>
+
+      <div class="actions">
+        <button id="analyzeBtn" class="btn btn-primary">Analyze Video</button>
+        <button id="demoBtn" class="btn btn-secondary">Run Demo</button>
+      </div>
+
+      <details class="settings card">
+        <summary>Backend Settings</summary>
+        <label class="field">
+          <span>Databricks Endpoint URL</span>
+          <input id="endpointInput" type="url" placeholder="https://<workspace>/serving-endpoints/<name>/invocations" />
+        </label>
+        <label class="field">
+          <span>API Token (stored locally)</span>
+          <input id="tokenInput" type="password" placeholder="dapi..." />
+        </label>
+        <button id="saveSettingsBtn" class="btn btn-ghost" type="button">Save Settings</button>
+      </details>
+    </main>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
