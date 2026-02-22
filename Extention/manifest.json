@@ -3,8 +3,11 @@
   "name": "Reality Check",
   "version": "1.1.0",
   "description": "Detect whether a video is likely AI-generated or Real.",
-  "permissions": ["activeTab", "tabs", "storage"],
+  "permissions": ["activeTab", "tabs", "storage", "scripting"],
   "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background.js"
+  },
   "action": {
     "default_popup": "popup.html",
     "default_title": "Reality Check",
@@ -14,5 +17,11 @@
     "16": "logo_icon.png",
     "48": "logo_icon.png",
     "128": "logo_icon.png"
-  }
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*", "https://www.tiktok.com/*"],
+      "js": ["content.js"]
+    }
+  ]
 }
