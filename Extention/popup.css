@@ -1,0 +1,246 @@
+:root {
+  --bg: linear-gradient(160deg, #0b1220 0%, #101e35 55%, #102b2c 100%);
+  --card: rgba(8, 14, 27, 0.7);
+  --border: rgba(255, 255, 255, 0.12);
+  --text: #f8fbff;
+  --muted: #b6c3d4;
+  --accent: #42d3a6;
+  --warning: #ff9f43;
+  --danger: #ff5e7d;
+}
+
+* {
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+html {
+  width: 390px;
+  min-width: 390px;
+  max-width: 390px;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  width: 390px;
+  min-width: 390px;
+  max-width: 390px;
+  overflow-x: hidden;
+  font-family: "Avenir Next", "Segoe UI", sans-serif;
+  color: var(--text);
+  background: var(--bg);
+}
+
+.popup {
+  width: 100%;
+  padding: 14px;
+  display: grid;
+  gap: 12px;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  min-width: 0;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.logo {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.eyebrow {
+  margin: 0;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+h1 {
+  margin: 2px 0 0;
+  font-size: 18px;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 12px;
+  backdrop-filter: blur(8px);
+}
+
+.label {
+  margin: 0 0 4px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+
+h2 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.muted {
+  color: var(--muted);
+  margin: 6px 0 0;
+  font-size: 13px;
+}
+
+.line-clamp {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tab-url {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  white-space: normal;
+}
+
+.meter-wrap {
+  margin-top: 10px;
+}
+
+.meter-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+  font-size: 13px;
+}
+
+.meter-track {
+  width: 100%;
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  overflow: hidden;
+}
+
+.meter-fill {
+  width: 0%;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--danger), var(--warning), var(--accent));
+  transition: width 250ms ease;
+}
+
+.actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.actions > * {
+  min-width: 0;
+}
+
+.btn {
+  width: 100%;
+  border: 0;
+  border-radius: 10px;
+  min-height: 38px;
+  cursor: pointer;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #04241c;
+}
+
+.btn-secondary {
+  background: #1e293f;
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.btn-ghost {
+  width: 100%;
+  margin-top: 8px;
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.chip {
+  font-size: 11px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  flex: 0 0 auto;
+}
+
+.chip-idle {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.chip-working {
+  background: rgba(255, 159, 67, 0.2);
+  border-color: rgba(255, 159, 67, 0.5);
+}
+
+.chip-ready {
+  background: rgba(66, 211, 166, 0.2);
+  border-color: rgba(66, 211, 166, 0.5);
+}
+
+@media (max-width: 370px) {
+  .actions {
+    grid-template-columns: 1fr;
+  }
+}
+
+.settings summary {
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.field {
+  display: grid;
+  gap: 4px;
+  margin-top: 10px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.field input {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text);
+  padding: 8px;
+  outline: none;
+}
+
+.field input:focus {
+  border-color: rgba(66, 211, 166, 0.8);
+}
