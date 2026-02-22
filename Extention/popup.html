@@ -41,24 +41,6 @@
         <p id="tabTitle" class="line-clamp">Detecting tab info...</p>
         <p id="tabUrl" class="muted tab-url">--</p>
       </section>
-
-      <div class="actions">
-        <button id="analyzeBtn" class="btn btn-primary">Analyze Video</button>
-        <button id="demoBtn" class="btn btn-secondary">Run Demo</button>
-      </div>
-
-      <details class="settings card">
-        <summary>Backend Settings</summary>
-        <label class="field">
-          <span>Databricks Endpoint URL</span>
-          <input id="endpointInput" type="url" placeholder="https://<workspace>/serving-endpoints/<name>/invocations" />
-        </label>
-        <label class="field">
-          <span>API Token (stored locally)</span>
-          <input id="tokenInput" type="password" placeholder="dapi..." />
-        </label>
-        <button id="saveSettingsBtn" class="btn btn-ghost" type="button">Save Settings</button>
-      </details>
     </main>
 
     <script src="popup.js"></script>
